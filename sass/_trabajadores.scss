@@ -1,0 +1,67 @@
+.centrar{
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+}
+
+
+#trabajadores{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: "." "centro" ".";
+
+    .oculto{
+        display: none;
+    }
+
+    .Inicio_sesion{
+        grid-area: centro;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "titulo" "form";
+        h2{
+            grid-area: titulo;
+            @extend .centrar;
+            font-size: 3rem;
+        }
+        form{
+            grid-area: form;
+            display: grid;
+            grid-template-rows: 1fr 1fr 50px;
+            gap: 10px;
+            grid-template-areas: "email" "contraseña" "boton";
+            p{
+                font-size: 1.5rem;
+            }
+            #email-sesion{
+                grid-area: email;
+                height: 25px;
+                border: 2px solid black;
+                border-radius: 10px;
+            }
+            #contraseña-sesion{
+                grid-area: contraseña;
+                height: 25px;
+                border: 2px solid black;
+                border-radius: 10px;
+            }
+            #boton{
+                grid-area: boton;
+                width: 100px;
+                height: 25px;
+                border: 2px solid black;
+                border-radius: 10px;
+                background-color: rgb(71, 27, 88);
+                color:white;
+                justify-self: center;
+                align-self: center;
+            }
+            @extend .centrar;
+        }
+        background-color: rgba(113, 50, 150, 0.705);
+        padding-block: 30px;
+        border-block: 3px solid black;
+    }
+}

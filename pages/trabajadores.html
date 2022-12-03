@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="../js/menu_hamburguesa.js"></script>
+    <script defer src="../js/menu.js"></script>
+    <script defer src="../js/modificar_prod.js"></script>
     <title>Otaku Mania</title>
 </head>
 
@@ -19,9 +20,33 @@
         <h1>Otaku Mania</h1>
     </header>
     
-    <main>
+    <main id="trabajadores">
 
-        <button> <a href="../index.html"></a></button>
+        <div class="Inicio_sesion">
+            <h2>Inicie Sesion</h2>
+            <form autocomplete="on">
+                
+                <label for="email">
+                    <p>Ingrese su email</p>
+                    <input type="email" name="email" id="email-sesion" required>
+                </label>
+
+                <label for="contraseña">
+                    <p>Ingrese a contraseña</p>
+                    <input type="password" name="contraseña" id="contraseña-sesion" required>
+                </label>
+                <input type="submit" id="boton">
+            </form>
+        </div>
+
+        
+        
+        <div id="Registrarse"></div>
+        
+        
+        
+        <div></div>
+
     </main>
     
     <footer>

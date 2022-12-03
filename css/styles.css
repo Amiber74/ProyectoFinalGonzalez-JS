@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -94,6 +95,69 @@ body footer {
 #index .tarjeta_prod button {
   grid-area: boton;
   margin-inline: 35px;
+}
+
+.centrar, #trabajadores .Inicio_sesion form, #trabajadores .Inicio_sesion h2 {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+#trabajadores {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "." "centro" ".";
+}
+#trabajadores .oculto {
+  display: none;
+}
+#trabajadores .Inicio_sesion {
+  grid-area: centro;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "titulo" "form";
+  background-color: rgba(113, 50, 150, 0.705);
+  padding-block: 30px;
+  border-block: 3px solid black;
+}
+#trabajadores .Inicio_sesion h2 {
+  grid-area: titulo;
+  font-size: 3rem;
+}
+#trabajadores .Inicio_sesion form {
+  grid-area: form;
+  display: grid;
+  grid-template-rows: 1fr 1fr 50px;
+  gap: 10px;
+  grid-template-areas: "email" "contraseña" "boton";
+}
+#trabajadores .Inicio_sesion form p {
+  font-size: 1.5rem;
+}
+#trabajadores .Inicio_sesion form #email-sesion {
+  grid-area: email;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+#trabajadores .Inicio_sesion form #contraseña-sesion {
+  grid-area: contraseña;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+#trabajadores .Inicio_sesion form #boton {
+  grid-area: boton;
+  width: 100px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgb(71, 27, 88);
+  color: white;
+  justify-self: center;
+  align-self: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
