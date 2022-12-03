@@ -67,4 +67,33 @@ body footer {
   background-color: rgb(44, 44, 44);
 }
 
+#index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-block: 15px;
+}
+#index .tarjeta_prod {
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titulo" "precio" " boton";
+  background-color: rgb(101, 32, 158);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-inline: 15px;
+}
+#index .tarjeta_prod h1 {
+  grid-area: titulo;
+  text-align: center;
+}
+#index .tarjeta_prod p {
+  grid-area: precio;
+  text-align: center;
+}
+#index .tarjeta_prod button {
+  grid-area: boton;
+  margin-inline: 35px;
+}
+
 /*# sourceMappingURL=styles.css.map */

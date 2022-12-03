@@ -1,0 +1,28 @@
+#index{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-block: 15px;
+    .tarjeta_prod{
+        display: grid;
+        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "titulo" "precio" " boton";
+        h1{
+            grid-area: titulo;
+            text-align: center;
+        }
+        p{
+            grid-area: precio;
+            text-align: center;
+        }
+        button{
+            grid-area: boton;
+            margin-inline: 35px;
+        }
+        background-color: rgb(101, 32, 158);
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-inline:15px;
+    }
+}

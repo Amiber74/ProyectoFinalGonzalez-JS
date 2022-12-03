@@ -1,4 +1,4 @@
-const productos = [
+const prod = [
     {nombre:"Producto 1",precio:100,id:1,img:"url",desc:"descripcion corta"},
     {nombre:"Producto 2",precio:200,id:2,img:"url",desc:"descripcion corta"},
     {nombre:"Producto 3",precio:300,id:3,img:"url",desc:"descripcion corta"},
@@ -10,4 +10,4 @@ const productos = [
     {nombre:"Producto 9",precio:900,id:9,img:"url",desc:"descripcion corta"},
 ]
 
-localStorage.setItem("Productos",JSON.stringify(productos))
+localStorage.setItem("Productos",JSON.stringify(prod))
