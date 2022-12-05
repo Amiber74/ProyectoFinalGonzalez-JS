@@ -97,10 +97,16 @@ body footer {
   margin-inline: 35px;
 }
 
-.centrar, #trabajadores .Inicio_sesion form, #trabajadores .Inicio_sesion h2 {
+.centrar, #trabajadores .Registrarse form, #trabajadores .Registrarse h2, #trabajadores .Inicio_sesion form, #trabajadores .Inicio_sesion h2 {
   text-align: center;
   align-self: center;
   justify-self: center;
+}
+
+.input, #trabajadores .Registrarse form #contraseña-registro, #trabajadores .Registrarse form #DNI-registro, #trabajadores .Registrarse form #email-registro, #trabajadores .Registrarse form #nombre-registro, #trabajadores .Inicio_sesion form #contraseña-sesion, #trabajadores .Inicio_sesion form #email-sesion {
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 #trabajadores {
@@ -138,17 +144,58 @@ body footer {
 }
 #trabajadores .Inicio_sesion form #email-sesion {
   grid-area: email;
-  height: 25px;
-  border: 2px solid black;
-  border-radius: 10px;
 }
 #trabajadores .Inicio_sesion form #contraseña-sesion {
   grid-area: contraseña;
+}
+#trabajadores .Inicio_sesion form #boton-sesion {
+  grid-area: boton;
+  width: 100px;
   height: 25px;
   border: 2px solid black;
   border-radius: 10px;
+  background-color: rgb(71, 27, 88);
+  color: white;
+  justify-self: center;
+  align-self: center;
 }
-#trabajadores .Inicio_sesion form #boton {
+#trabajadores .Registrarse {
+  grid-area: centro;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "titulo" "form";
+  background-color: rgba(113, 50, 150, 0.705);
+  padding-block: 30px;
+  border-block: 3px solid black;
+  display: none;
+}
+#trabajadores .Registrarse h2 {
+  grid-area: titulo;
+  font-size: 3rem;
+}
+#trabajadores .Registrarse form {
+  grid-area: form;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 50px;
+  grid-template-areas: "nombre" "email" "dni" "contraseña" "boton";
+}
+#trabajadores .Registrarse form p {
+  font-size: 1.5rem;
+}
+#trabajadores .Registrarse form #nombre-registro {
+  grid-area: nombre;
+}
+#trabajadores .Registrarse form #email-registro {
+  grid-area: email;
+}
+#trabajadores .Registrarse form #DNI-registro {
+  grid-area: dni;
+}
+#trabajadores .Registrarse form #contraseña-registro {
+  grid-area: contraseña;
+}
+#trabajadores .Registrarse form #boton-registro {
   grid-area: boton;
   width: 100px;
   height: 25px;

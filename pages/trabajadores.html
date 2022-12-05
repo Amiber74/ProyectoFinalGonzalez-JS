@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script defer src="../js/menu.js"></script>
+    <script defer src="../js/trabajadores_registrados.js"></script>
+    <script defer src="../js/registro.js"></script>
+    <script defer src="../js/inicio_sesion.js"></script>
     <script defer src="../js/modificar_prod.js"></script>
     <title>Otaku Mania</title>
 </head>
@@ -35,18 +38,39 @@
                     <p>Ingrese a contraseña</p>
                     <input type="password" name="contraseña" id="contraseña-sesion" required>
                 </label>
-                <input type="submit" id="boton">
+                <input type="submit" id="boton-sesion">
+            </form>
+        </div>
+
+        <div class="Registrarse">
+            <h2>Registro</h2>
+            <form autocomplete="on">
+                <label for="nombre-registro">
+                    <p>Ingrese su nombre completo</p>
+                    <input type="text" name="nombre" id="nombre-registro">
+                </label>
+
+                <label for="email-registro">
+                    <p>Ingrese su email</p>
+                    <input type="email" name="email" id="email-registro">
+                </label>
+
+                <label for="DNI-registro">
+
+                    <p>Ingrese su dni</p>
+                    <input type="number" name="DNI" id="DNI-registro">
+                </label>
+
+                <label for="contraseña-registro">
+                    <p>Ingrese una contraseña</p>
+                    <input type="password" name="contraseña" id="contraseña-registro">
+                </label>
+
+                <input type="submit" id="boton-registro">
             </form>
         </div>
 
         
-        
-        <div id="Registrarse"></div>
-        
-        
-        
-        <div></div>
-
     </main>
     
     <footer>
