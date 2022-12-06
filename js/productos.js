@@ -10,6 +10,8 @@
 //     {nombre:"Juego de peluches slimes", precio:11000, id:9, img:"https://m.media-amazon.com/images/I/71+7mRe4JeL._AC_SL1500_.jpg", desc:"peluches de slimes suaves al tacto de todos los elementos"},
 //     {nombre:"auriculares genshin impact", precio:43000, id:10, img:"https://m.media-amazon.com/images/I/51Cybn7sAAL._AC_.jpg", desc:"Auriculares tematica de klee, personaje de Genshin Impact"}
 // ]
+// localStorage.setItem("Productos",JSON.stringify(prod))
+
 
 const Producto_LS = localStorage.getItem("Productos")
 let prod_list = []

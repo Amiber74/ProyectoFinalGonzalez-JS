@@ -161,14 +161,15 @@ body footer {
 }
 #index .tarjeta_prod button {
   grid-area: boton;
+  margin-left: 21%;
   width: 100px;
   height: 25px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: rgb(71, 27, 88);
   color: white;
+  text-align: center;
   justify-self: center;
-  align-self: center;
   cursor: pointer;
 }
 
@@ -370,6 +371,70 @@ body footer {
 }
 #trabajadores .contenido_prod-activo #subida_dnis form #boton-dni {
   grid-area: boton;
+}
+
+.carrito {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "." "center" ".";
+  height: 100vh;
+}
+.carrito .carrito-vacio-activo {
+  grid-area: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 40vh;
+  background-color: silver;
+  border-block: 2px solid black;
+}
+.carrito .carrito-vacio-activo h3 {
+  text-align: center;
+  align-self: center;
+  font-size: 2.5rem;
+}
+.carrito .carrito-vacio-activo p {
+  text-align: center;
+  align-self: start;
+  font-size: 1.5rem;
+}
+.carrito .carrito-vacio-oculto {
+  display: none;
+}
+.carrito #Carrito {
+  grid-area: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 50px;
+  grid-template-areas: "productos" "boton";
+  row-gap: 20px;
+}
+.carrito #Carrito div {
+  grid-area: productos;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background-color: silver;
+  border-block: 2px solid black;
+}
+.carrito #Carrito div img {
+  align-self: center;
+  justify-self: center;
+  width: 90%;
+  height: 165px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px;
+}
+.carrito #Carrito div .nombre_carrito {
+  grid-area: nombre;
+  font-size: 1.8rem;
+  text-align: center;
+  align-self: end;
+}
+.carrito #Carrito div .precio_carrito {
+  grid-area: precio;
+  font-size: 1.8rem;
+  text-align: center;
+  align-self: start;
 }
 
 /*# sourceMappingURL=styles.css.map */

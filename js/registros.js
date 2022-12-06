@@ -12,7 +12,6 @@ const dni_aceptados = JSON.parse(localStorage.getItem("DNI"))
 const lista_registrados = JSON.parse(localStorage.getItem("Registrados"))
 
 boton_registro.addEventListener("click", (e)=>{
-    e.preventDefault()
     let estado = false
 
     for (const d_t of dni_aceptados){

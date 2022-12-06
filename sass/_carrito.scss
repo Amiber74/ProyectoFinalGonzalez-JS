@@ -1,0 +1,63 @@
+.carrito{
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: "." "center" ".";  
+    .carrito-vacio-activo{
+        grid-area: center;
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        h3{
+            text-align: center;
+            align-self: center;
+            font-size: 2.5rem;
+        }
+        p{
+        text-align: center;
+        align-self: start;
+        font-size: 1.5rem;
+        }
+        height: 40vh;
+        background-color: silver;
+        border-block: 2px solid black;
+    }
+    .carrito-vacio-oculto{
+        display: none;
+    }
+    #Carrito{
+        grid-area: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 50px;
+        grid-template-areas: "productos" "boton";
+        row-gap: 20px;
+        div{
+            grid-area: productos;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            img{
+                align-self: center;
+                justify-self: center;
+                width: 90%;
+                height: 165px;
+                border: 2px solid black;
+                border-radius: 20px;
+                margin: 10px;
+            }
+            .nombre_carrito{
+                grid-area: nombre;
+                font-size: 1.8rem;
+                text-align: center;
+                align-self: end;
+            }
+            .precio_carrito{
+                grid-area: precio;
+                font-size: 1.8rem;
+                text-align: center;
+                align-self: start;
+            }
+            background-color: silver;
+            border-block:2px solid black;
+        }
+    }
+    height: 100vh;
+}
