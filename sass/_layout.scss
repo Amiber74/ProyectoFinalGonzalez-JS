@@ -59,6 +59,45 @@ body{
     }
     main{
         grid-area: contenido;
+        .cont_menu {
+            position: absolute;
+            left: 0;
+            top: 120px;
+            height: 500vh;
+            width: 100vw;
+            background-color: rgba(123, 40, 131);
+            border: 2px solid rgb(96, 32, 102);
+            padding: 20px;
+            ul{
+                padding: 5px;
+                li{
+                    text-align: center;
+                    font-size: 1.2rem;
+                    padding-left: 20%;
+                    &:hover{
+                        width: 100%;
+                        a{
+                            p{
+                                color: gray;
+                            }
+                        }
+                    }
+                    a{
+                        p{
+                            color: black;
+                            font-size: 2rem;
+                            width: 80%;
+                            padding-bottom: 20px;
+                        }
+                    }
+                }
+            }  
+            transition: 0.8s;
+        }
+        .activado{
+            transform: translate(-500px);
+            transition: 1s;
+        }
     }
     footer{
         grid-area: pie_pagina;

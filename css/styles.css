@@ -62,6 +62,41 @@ body header .linea3_menu-activa {
 body main {
   grid-area: contenido;
 }
+body main .cont_menu {
+  position: absolute;
+  left: 0;
+  top: 120px;
+  height: 500vh;
+  width: 100vw;
+  background-color: rgb(123, 40, 131);
+  border: 2px solid rgb(96, 32, 102);
+  padding: 20px;
+  transition: 0.8s;
+}
+body main .cont_menu ul {
+  padding: 5px;
+}
+body main .cont_menu ul li {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-left: 20%;
+}
+body main .cont_menu ul li:hover {
+  width: 100%;
+}
+body main .cont_menu ul li:hover a p {
+  color: gray;
+}
+body main .cont_menu ul li a p {
+  color: black;
+  font-size: 2rem;
+  width: 80%;
+  padding-bottom: 20px;
+}
+body main .activado {
+  transform: translate(-500px);
+  transition: 1s;
+}
 body footer {
   grid-area: pie_pagina;
   border-top: 2px solid black;
@@ -76,47 +111,96 @@ body footer {
 }
 #index .tarjeta_prod {
   display: grid;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-rows: 70px 200px 60px 20px 30px;
+  gap: 5px;
   grid-template-columns: 1fr;
-  grid-template-areas: "titulo" "precio" " boton";
-  background-color: rgb(101, 32, 158);
+  align-items: center;
+  grid-template-areas: "titulo" "img" "descripcion" "precio" "boton";
+  background-color: rgb(119, 44, 180);
   border: 1px solid black;
   border-radius: 10px;
   margin-inline: 15px;
 }
 #index .tarjeta_prod h1 {
+  display: flex;
   grid-area: titulo;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
 }
-#index .tarjeta_prod p {
+#index .tarjeta_prod img {
+  grid-area: img;
+  width: 80%;
+  height: 100%;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10%;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+#index .tarjeta_prod .descripcion {
+  grid-area: descripcion;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 113%;
+}
+#index .tarjeta_prod .precio {
   grid-area: precio;
   text-align: center;
+  align-self: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
 }
 #index .tarjeta_prod button {
   grid-area: boton;
-  margin-inline: 35px;
+  width: 100px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgb(71, 27, 88);
+  color: white;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
 }
 
-.centrar, #trabajadores .Registrarse form, #trabajadores .Registrarse h2, #trabajadores .Inicio_sesion form, #trabajadores .Inicio_sesion h2 {
+.centrar, #trabajadores .contenido_prod-activo #subida_dnis form, #trabajadores .contenido_prod-activo #modificar_productos, #trabajadores .Registrarse_activo form, #trabajadores .Registrarse_activo h2, #trabajadores .Inicio_sesion form, #trabajadores .Inicio_sesion h2 {
   text-align: center;
   align-self: center;
   justify-self: center;
 }
 
-.input, #trabajadores .Registrarse form #contraseña-registro, #trabajadores .Registrarse form #DNI-registro, #trabajadores .Registrarse form #email-registro, #trabajadores .Registrarse form #nombre-registro, #trabajadores .Inicio_sesion form #contraseña-sesion, #trabajadores .Inicio_sesion form #email-sesion {
+.input, #trabajadores .contenido_prod-activo #subida_dnis form #numero-dni, #trabajadores .contenido_prod-activo #subida_dnis form #nombre-dni, #trabajadores .contenido_prod-activo #modificar_productos form #descripcion-prod, #trabajadores .contenido_prod-activo #modificar_productos form #imagen-prod, #trabajadores .contenido_prod-activo #modificar_productos form #precio-prod, #trabajadores .contenido_prod-activo #modificar_productos form #nombre-prod, #trabajadores .Registrarse_activo form #contraseña-registro, #trabajadores .Registrarse_activo form #DNI-registro, #trabajadores .Registrarse_activo form #email-registro, #trabajadores .Registrarse_activo form #nombre-registro, #trabajadores .Inicio_sesion form #contraseña-sesion, #trabajadores .Inicio_sesion form #email-sesion {
   height: 25px;
   border: 2px solid black;
   border-radius: 10px;
+  padding-inline: 10px;
+}
+
+.boton, #trabajadores .contenido_prod-activo #subida_dnis form #boton-dni, #trabajadores .contenido_prod-activo #modificar_productos form #boton-prod, #trabajadores .Registrarse_activo form #boton-registro, #trabajadores .Inicio_sesion form #boton-sesion {
+  width: 100px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgb(71, 27, 88);
+  color: white;
+  justify-self: center;
+  align-self: center;
 }
 
 #trabajadores {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 150px 1fr 150px;
   grid-template-areas: "." "centro" ".";
-}
-#trabajadores .oculto {
-  display: none;
 }
 #trabajadores .Inicio_sesion {
   grid-area: centro;
@@ -150,16 +234,14 @@ body footer {
 }
 #trabajadores .Inicio_sesion form #boton-sesion {
   grid-area: boton;
-  width: 100px;
-  height: 25px;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: rgb(71, 27, 88);
-  color: white;
-  justify-self: center;
-  align-self: center;
 }
-#trabajadores .Registrarse {
+#trabajadores .Inicio_sesion-oculto {
+  display: none;
+}
+#trabajadores .Registrarse_oculto {
+  display: none;
+}
+#trabajadores .Registrarse_activo {
   grid-area: centro;
   display: grid;
   grid-template-rows: 1fr 2fr;
@@ -167,44 +249,127 @@ body footer {
   background-color: rgba(113, 50, 150, 0.705);
   padding-block: 30px;
   border-block: 3px solid black;
-  display: none;
 }
-#trabajadores .Registrarse h2 {
+#trabajadores .Registrarse_activo h2 {
   grid-area: titulo;
   font-size: 3rem;
 }
-#trabajadores .Registrarse form {
+#trabajadores .Registrarse_activo form {
   grid-area: form;
   display: grid;
   gap: 10px;
   grid-template-rows: 1fr 1fr 1fr 1fr 50px;
   grid-template-areas: "nombre" "email" "dni" "contraseña" "boton";
 }
-#trabajadores .Registrarse form p {
+#trabajadores .Registrarse_activo form p {
   font-size: 1.5rem;
 }
-#trabajadores .Registrarse form #nombre-registro {
+#trabajadores .Registrarse_activo form #nombre-registro {
   grid-area: nombre;
 }
-#trabajadores .Registrarse form #email-registro {
+#trabajadores .Registrarse_activo form #email-registro {
   grid-area: email;
 }
-#trabajadores .Registrarse form #DNI-registro {
+#trabajadores .Registrarse_activo form #DNI-registro {
   grid-area: dni;
 }
-#trabajadores .Registrarse form #contraseña-registro {
+#trabajadores .Registrarse_activo form #contraseña-registro {
   grid-area: contraseña;
 }
-#trabajadores .Registrarse form #boton-registro {
+#trabajadores .Registrarse_activo form #boton-registro {
   grid-area: boton;
-  width: 100px;
-  height: 25px;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: rgb(71, 27, 88);
-  color: white;
-  justify-self: center;
+}
+#trabajadores .contenido_prod-oculto {
+  display: none;
+}
+#trabajadores .contenido_prod-activo {
+  grid-area: centro;
+  display: grid;
+  gap: 20px;
+  grid-template-rows: 50px 1fr 5px 0.5fr;
+  grid-template-areas: "titulo" "prod" "hr" "dnis";
+  background-color: gainsboro;
+  padding: 20px;
+  border-block: 2px solid black;
+}
+#trabajadores .contenido_prod-activo h2 {
+  grid: titulo;
+  text-align: center;
+  font-size: 1.9rem;
+  padding-bottom: 60px;
+}
+#trabajadores .contenido_prod-activo #modificar_productos {
+  grid-area: prod;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "titulo" "form";
+}
+#trabajadores .contenido_prod-activo #modificar_productos h3 {
+  grid-area: titulo;
+  font-size: 1.5rem;
   align-self: center;
+  text-align: center;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form {
+  grid-area: form;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr) 50px;
+  gap: 15px;
+  grid-template-areas: "nombre" "precio" "imagen" "descripcion" "boton";
+}
+#trabajadores .contenido_prod-activo #modificar_productos form p {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form #nombre-prod {
+  grid-area: nombre;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form #precio-prod {
+  grid-area: precio;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form #imagen-prod {
+  grid-area: imagen;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form #descripcion-prod {
+  grid-area: descripcion;
+}
+#trabajadores .contenido_prod-activo #modificar_productos form #boton-prod {
+  grid-area: boton;
+}
+#trabajadores .contenido_prod-activo hr {
+  grid-area: hr;
+}
+#trabajadores .contenido_prod-activo #subida_dnis {
+  grid-area: dnis;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "titulo" "contenido";
+}
+#trabajadores .contenido_prod-activo #subida_dnis h3 {
+  grid-area: titulo;
+  font-size: 1.5rem;
+  align-self: center;
+  text-align: center;
+}
+#trabajadores .contenido_prod-activo #subida_dnis form {
+  grid-area: contenido;
+  display: grid;
+  grid-template-rows: 1fr 1fr 50px;
+  grid-template-areas: "nombre" "dni" "boton";
+}
+#trabajadores .contenido_prod-activo #subida_dnis form p {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+}
+#trabajadores .contenido_prod-activo #subida_dnis form #nombre-dni {
+  grid-area: nombre;
+}
+#trabajadores .contenido_prod-activo #subida_dnis form #numero-dni {
+  grid-area: dni;
+}
+#trabajadores .contenido_prod-activo #subida_dnis form #boton-dni {
+  grid-area: boton;
 }
 
 /*# sourceMappingURL=styles.css.map */

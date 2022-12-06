@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="../js/productos.js"></script>
     <script defer src="../js/menu.js"></script>
     <script defer src="../js/trabajadores_registrados.js"></script>
-    <script defer src="../js/registro.js"></script>
+    <script defer src="../js/registros.js"></script>
     <script defer src="../js/inicio_sesion.js"></script>
     <script defer src="../js/modificar_prod.js"></script>
+    <script defer src="../js/agregar_dni.js"></script>
     <title>Otaku Mania</title>
 </head>
 
@@ -24,8 +27,8 @@
     </header>
     
     <main id="trabajadores">
-
-        <div class="Inicio_sesion">
+        
+        <div class="Inicio_sesion-oculto">
             <h2>Inicie Sesion</h2>
             <form autocomplete="on">
                 
@@ -41,8 +44,9 @@
                 <input type="submit" id="boton-sesion">
             </form>
         </div>
+        
 
-        <div class="Registrarse">
+        <div class="Registrarse_oculto">
             <h2>Registro</h2>
             <form autocomplete="on">
                 <label for="nombre-registro">
@@ -70,7 +74,63 @@
             </form>
         </div>
 
-        
+
+        <div class="contenido_prod-activo">
+            <div class="cont_menu activado" id="menu">
+                <ul>
+                    <li>
+                        <a href="../index.html">
+                            <p><strong>Inicio</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./carrito.html">
+                            <p><strong> Carrito</strong></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <h2> Bienvenido señor trabajador</h2>
+
+            <div id="modificar_productos">
+                <h3>Cargar nuevo Producto</h3>
+                <form >
+                    <label for="nombre-prod">
+                        <p>Introduzca el nombre del producto</p>
+                        <input type="text" name="nombre-prod" id="nombre-prod" required>
+                    </label>
+                    <label for="precio-prod">
+                        <p>Introduzca el precio del producto</p>
+                        <input type="number" name="precio-prod" id="precio-prod" required>
+                    </label>
+                    <label for="imagen-prod">
+                        <p>Introduzca el link de la imagen</p>
+                        <input type="text" name="imagen-prod" id="imagen-prod" required>
+                    </label>
+                    <label for="descripcion-prod">
+                        <p>Introduzca una breve descripcion</p>
+                        <input type="text" name="descripcion-prod" id="descripcion-prod" required>
+                    </label>
+                    <input type="submit" id="boton-prod">
+                </form>
+            </div>
+            <hr>
+            <div id="subida_dnis">
+                <h3>Cargar nuevo Trabajador</h3>
+                <form >
+                    <label>
+                        <p>Introduzca el nombre del trabajador</p>
+                        <input type="text" name="nombre-dni" id="nombre-dni" required>
+                    </label>
+                    <label >
+                        <p>Introduzca el DNI del trabajador</p>
+                        <input type="number" name="numero-dni" id="numero-dni" required >
+                    </label>
+                    <input type="submit" id="boton-dni">
+                </form>
+            </div>
+
+        </div>
     </main>
     
     <footer>

@@ -5,22 +5,64 @@
     margin-block: 15px;
     .tarjeta_prod{
         display: grid;
-        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-rows: 70px 200px 60px 20px 30px;
+        gap: 5px;
         grid-template-columns: 1fr;
-        grid-template-areas: "titulo" "precio" " boton";
+        align-items: center;
+        grid-template-areas: "titulo" "img" "descripcion" "precio" "boton";
+
         h1{
+            display: flex;
             grid-area: titulo;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size:1.3rem;
+            width: 100%;
+            height: 100%;
         }
-        p{
+        img{
+            grid-area: img;
+            width: 80%;
+            height: 100%;
+            justify-self: center;
+            align-self: center;
+            border-radius: 10%;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 100%;
+            height: 113%;
+        }
+        .precio{
             grid-area: precio;
             text-align: center;
+            align-self: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 100%;
         }
         button{
             grid-area: boton;
-            margin-inline: 35px;
+            width: 100px;
+            height: 25px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgb(71, 27, 88);
+            color:white;
+            justify-self: center;
+            align-self: center;
+            cursor: pointer;
         }
-        background-color: rgb(101, 32, 158);
+        
+        background-color: rgb(119, 44, 180);
         border: 1px solid black;
         border-radius: 10px;
         margin-inline:15px;

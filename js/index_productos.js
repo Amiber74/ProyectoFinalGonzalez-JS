@@ -7,8 +7,10 @@ Array_prod.forEach((p)=>{
     div.classList.add("tarjeta_prod")
     div.innerHTML =`
     <h1>${p.nombre}</h1>
-    <p>precio:$${p.precio}</p>
-    <button><strong> Comprame </comprame></button>
+    <img src="${p.img}"></img>
+    <p class="descripcion">${p.desc}</p>
+    <p class="precio">$${p.precio}</p>
+    <button id="boton_comprar"><strong> Comprame </comprame></button>
     `
     Cont_prod.append(div)
 })

@@ -7,17 +7,25 @@
     height: 25px;
     border: 2px solid black;
     border-radius: 10px;
+    padding-inline: 10px;
+}
+.boton{
+    width: 100px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(71, 27, 88);
+    color:white;
+    justify-self: center;
+    align-self: center;
 }
 
 #trabajadores{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 150px 1fr 150px;
     grid-template-areas: "." "centro" ".";
 
-    .oculto{
-        display: none;
-    }
 
     .Inicio_sesion{
         grid-area: centro;
@@ -49,14 +57,7 @@
             }
             #boton-sesion{
                 grid-area: boton;
-                width: 100px;
-                height: 25px;
-                border: 2px solid black;
-                border-radius: 10px;
-                background-color: rgb(71, 27, 88);
-                color:white;
-                justify-self: center;
-                align-self: center;
+                @extend .boton;
             }
             @extend .centrar;
         }
@@ -64,11 +65,20 @@
         padding-block: 30px;
         border-block: 3px solid black;
     }
-    .Registrarse{
+    .Inicio_sesion-oculto{
+        display: none;
+    }
+
+
+    .Registrarse_oculto{
+        display: none;
+    }
+    .Registrarse_activo{
         grid-area: centro;
         display: grid;
         grid-template-rows: 1fr 2fr ;
         grid-template-areas:"titulo" "form";
+        
         
         h2{
             grid-area: titulo;
@@ -103,19 +113,128 @@
             }
             #boton-registro{
                 grid-area: boton;
-                width: 100px;
-                height: 25px;
-                border: 2px solid black;
-                border-radius: 10px;
-                background-color: rgb(71, 27, 88);
-                color:white;
-                justify-self: center;
-                align-self: center;
+                @extend .boton;
             }
         }
         background-color: rgba(113, 50, 150, 0.705);
         padding-block: 30px;
         border-block: 3px solid black;
+        
+    }
+
+    .contenido_prod-oculto {
         display: none;
     }
+    .contenido_prod-activo{
+        grid-area: centro;
+        display: grid;
+        gap: 20px;
+        grid-template-rows: 50px 1fr 5px 0.5fr;
+        grid-template-areas: "titulo" "prod" "hr" "dnis";
+
+        h2{
+            grid: titulo;
+            text-align: center;
+            font-size: 1.9rem;
+            padding-bottom: 60px;
+        }
+
+        #modificar_productos{
+            grid-area: prod;
+            @extend .centrar;
+            display: grid;
+            gap: 10px;
+            grid-template-rows: 50px 1fr;
+            grid-template-areas: "titulo" "form";
+            h3{
+                grid-area: titulo;
+                font-size: 1.5rem;
+                align-self:center;
+                text-align: center;
+            }
+            form{
+                grid-area: form;
+                display: grid;
+                grid-template-rows: repeat(4,1fr) 50px;
+                gap: 15px;
+                grid-template-areas: 
+                "nombre"
+                "precio"
+                "imagen"
+                "descripcion"
+                "boton";
+                p{
+                    font-size: 1.2rem;
+                    padding-bottom: 5px;
+                }
+                #nombre-prod{
+                    grid-area: nombre;
+                    @extend .input
+                }
+                #precio-prod{
+                    grid-area: precio;
+                    @extend .input
+                }
+                #imagen-prod{
+                    grid-area: imagen;
+                    @extend .input
+                }
+                #descripcion-prod{
+                    grid-area: descripcion;
+                    @extend .input
+                }
+                #boton-prod{
+                    grid-area: boton;
+                    @extend .boton;
+                }
+            }
+        }
+
+        hr{
+            grid-area: hr;
+        }
+
+        #subida_dnis{
+            grid-area: dnis;
+            display: grid;
+            grid-template-rows: 50px 1fr;
+            grid-template-areas: "titulo" "contenido";
+            h3{
+                grid-area: titulo;
+                font-size: 1.5rem;
+                align-self:center;
+                text-align: center;
+            }
+            form{
+                grid-area: contenido;
+                display: grid;
+                @extend .centrar;
+                grid-template-rows: 1fr 1fr 50px;
+                grid-template-areas: "nombre" "dni" "boton";
+                p{
+                    font-size: 1.2rem;
+                    padding-bottom: 5px;
+                }
+                #nombre-dni{
+                    grid-area: nombre;
+                    @extend .input
+                }
+                #numero-dni{
+                    grid-area: dni;
+                    @extend .input
+                }
+                #boton-dni{
+                    grid-area: boton;
+                    @extend .boton;
+                }
+            }
+        }
+        background-color: gainsboro;
+        padding: 20px;
+        border-block: 2px solid black;
+    }
+
+
+
+
 }
