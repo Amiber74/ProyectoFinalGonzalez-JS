@@ -5,11 +5,12 @@
 
 // const dni_registro = [
 //     {dni:12378945, nombre: "kevin"},
-//     {dni:78965321, nombre: "Mario"},
+//     {dni:78965321, nombre: "mario"},
 //     {dni:36974128, nombre: "hugo"},
 //     {dni:14826579, nombre: "facundo"},
 //     {dni:74125963, nombre:"cris"},
 // ]
+
 const dni_LS = JSON.parse(localStorage.getItem("DNI"))
 let dni=[]
 if(dni!==null){

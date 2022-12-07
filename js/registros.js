@@ -11,7 +11,8 @@ const contraseña = document.querySelector("#contraseña-registro")
 const dni_aceptados = JSON.parse(localStorage.getItem("DNI"))
 const lista_registrados = JSON.parse(localStorage.getItem("Registrados"))
 
-boton_registro.addEventListener("click", ()=>{
+boton_registro.addEventListener("click", (e)=>{
+    e.preventDefault()
     let estado = false
 
     for (const d_t of dni_aceptados){
@@ -29,8 +30,25 @@ boton_registro.addEventListener("click", ()=>{
 
         }
         lista_registrados.push(new Trabajador (nombre.value.toLowerCase(),email.value,dni.value,contraseña.value))
-
         localStorage.setItem("Registrados", JSON.stringify(lista_registrados))
+        Swal.fire({
+            icon:'warning',
+            title:'Cargando usuario',
+            text:'porfavor espere',
+            timer:3000,
+            timerProgressBar:true,
+            showConfirmButton:false
+        })
+
+        setTimeout(()=>{
+            Swal.fire({
+                icon:'success',
+                title:'Usuario registrado correctamente',
+                
+            })
+        },3000)
+
+
     } else {
         console.log("error")
         Swal.fire({

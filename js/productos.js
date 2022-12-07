@@ -16,5 +16,5 @@
 const Producto_LS = localStorage.getItem("Productos")
 let prod_list = []
 if (prod_list !== null){
-    prod_list = Producto_LS || localStorage.setItem('Productos', JSON.stringify(P))
+    prod_list = Producto_LS || localStorage.setItem('Productos', JSON.stringify())
 }
