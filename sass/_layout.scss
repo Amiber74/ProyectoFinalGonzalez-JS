@@ -65,8 +65,8 @@ body{
             top: 120px;
             height: 500vh;
             width: 100vw;
-            background-color: rgba(123, 40, 131);
-            border: 2px solid rgb(96, 32, 102);
+            background-color: rgb(138, 138, 138);
+            border-block: 2px solid black;
             padding: 20px;
             ul{
                 padding: 5px;
@@ -83,6 +83,7 @@ body{
                         }
                     }
                     a{
+                        text-decoration: none;
                         p{
                             color: black;
                             font-size: 2rem;

@@ -13,15 +13,12 @@
 const dni_LS = JSON.parse(localStorage.getItem("DNI"))
 let dni=[]
 if(dni!==null){
-    dni=dni_LS || []
+    dni=dni_LS || localStorage.setItem("DNI",JSON.stringify(dni))
 }
 
 const Registrados_LS = JSON.parse(localStorage.getItem("Registrados"))
 let Registrados =[]
 if (Registrados !== null){
-    Registrados = Registrados_LS || []
+    Registrados = Registrados_LS || localStorage.setItem("Registrados",JSON.stringify(Registrados))
 }
 
-// localStorage.setItem("DNI", JSON.stringify(dni_registro))
-
-localStorage.setItem("Registrados", JSON.stringify(Registrados))

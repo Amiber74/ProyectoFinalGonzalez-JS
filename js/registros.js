@@ -11,7 +11,7 @@ const contraseña = document.querySelector("#contraseña-registro")
 const dni_aceptados = JSON.parse(localStorage.getItem("DNI"))
 const lista_registrados = JSON.parse(localStorage.getItem("Registrados"))
 
-boton_registro.addEventListener("click", (e)=>{
+boton_registro.addEventListener("click", ()=>{
     let estado = false
 
     for (const d_t of dni_aceptados){
@@ -28,7 +28,7 @@ boton_registro.addEventListener("click", (e)=>{
             this.contraseña=contraseña;
 
         }
-        lista_registrados.push(new Trabajador (nombre.value,email.value,dni.value,contraseña.value))
+        lista_registrados.push(new Trabajador (nombre.value.toLowerCase(),email.value,dni.value,contraseña.value))
 
         localStorage.setItem("Registrados", JSON.stringify(lista_registrados))
     } else {

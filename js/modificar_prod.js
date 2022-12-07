@@ -17,8 +17,10 @@ function Producto (nombre,precio,imagen,descripcion){
     this.desc=descripcion
 }
 
+
 boton_prod.addEventListener("click", ()=>{
-    lista_prod.push(new Producto(nombre_prod.value ,precio_prod.value ,imagen_prod.value ,descripcion_prod.value ))
+    lista_prod.push(new Producto(nombre_prod.value.toLowerCase() ,parseInt(precio_prod.value) ,imagen_prod.value ,descripcion_prod.value))
     localStorage.setItem("Productos", JSON.stringify(lista_prod))
+    location.reload()
 })
 

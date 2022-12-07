@@ -1,7 +1,11 @@
 const Array_prod = JSON.parse(localStorage.getItem("Productos"))
 const Cont_prod = document.querySelector(`#index`)
-const lista_carrito =[]
-Array.from(Array_prod)
+const Carrito_LS = JSON.parse(localStorage.getItem('Carrito'))
+
+let lista_carrito=[]
+if(lista_carrito!==null){
+    lista_carrito=Carrito_LS || localStorage.setItem("Productos",JSON.stringify(lista_carrito))
+}
 
 Array_prod.forEach((p)=>{
     const div = document.createElement("div")

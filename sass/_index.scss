@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-block: 15px;
+
     .tarjeta_prod{
         display: grid;
         grid-template-rows: 70px 200px 60px 20px 30px;
@@ -10,7 +11,6 @@
         grid-template-columns: 1fr;
         align-items: center;
         grid-template-areas: "titulo" "img" "descripcion" "precio" "boton";
-
         h1{
             display: flex;
             grid-area: titulo;
@@ -36,7 +36,7 @@
             font-size: 1rem;
             font-weight: 600;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
             width: 100%;
             height: 113%;
         }
@@ -46,24 +46,25 @@
             align-self: center;
             font-size: 1.2rem;
             font-weight: 700;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
             width: 100%;
         }
         button{
             grid-area: boton;
             margin-left: 21%;
+            margin-bottom: 5px;
             width: 100px;
             height: 25px;
             border: 2px solid black;
             border-radius: 10px;
-            background-color: rgb(71, 27, 88);
+            background-color: rgb(85, 85, 85);
             color:white;
             text-align: center;
             justify-self: center;
             cursor: pointer;
         }
         
-        background-color: rgb(119, 44, 180);
+        background-color: silver;
         border: 1px solid black;
         border-radius: 10px;
         margin-inline:15px;

@@ -1,7 +1,13 @@
 .carrito{
     display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-template-areas: "." "center" ".";  
+    grid-template-rows: 200px 2fr 200px;
+    grid-template-areas: "." "center" "total";  
+
+
+    .carrito-vacio-oculto{
+        display: none;
+    }
+
     .carrito-vacio-activo{
         grid-area: center;
         display: grid;
@@ -20,28 +26,26 @@
         background-color: silver;
         border-block: 2px solid black;
     }
-    .carrito-vacio-oculto{
-        display: none;
-    }
     #Carrito{
         grid-area: center;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 50px;
-        grid-template-areas: "productos" "boton";
-        row-gap: 20px;
-        div{
-            grid-area: productos;
+        gap: 15px;
+        margin-block: 15px;
+        .producto{
             display: grid;
+            margin-block: 10px;
             grid-template-columns: 200px 1fr;
+            grid-template-rows: 70px 70px 70px;
+            grid-template-areas: "img nombre" "img precio" "img boton";
             img{
+                grid-area: img;
+                width: 80%;
+                height: 80%;
                 align-self: center;
                 justify-self: center;
-                width: 90%;
-                height: 165px;
                 border: 2px solid black;
-                border-radius: 20px;
-                margin: 10px;
+                border-radius: 10px;
             }
             .nombre_carrito{
                 grid-area: nombre;
@@ -51,13 +55,44 @@
             }
             .precio_carrito{
                 grid-area: precio;
-                font-size: 1.8rem;
+                font-size: 1.5rem;
                 text-align: center;
-                align-self: start;
+            }
+            #eliminar_prod{
+                grid-area: boton;
+                margin-left: 50px;
+                width: 100px;
+                height: 30px;
+                border: 2px solid black;
+                border-radius: 10px;
+                background-color: rgb(85, 85, 85);
+                color:white;
+                justify-self: center;
+                align-self: center;
             }
             background-color: silver;
             border-block:2px solid black;
         }
     }
-    height: 100vh;
+    .Precio_Total{
+        grid-area: total;
+        font-size: 2.5rem;
+        text-align: center;
+        align-self: center;
+        button{
+            margin-left: 45px;
+            font-size: 1.5rem;
+            width: 200px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgb(85, 85, 85);
+            color:white;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+    .Precio_Total-oculto{
+        display: none;
+    }
 }

@@ -11,10 +11,13 @@ function Dni_cargado (dni,nombre){
 
 boton_dni.addEventListener("click", (e)=>{
     e.preventDefault()
-    if (nombre_dni.value === '' && numero_dni.value === ''){
-        console.log("no hay  valor")
+    if (nombre_dni.value === '' || numero_dni.value === ''){
+        Swal.fire({
+            icon:'error',
+            title:'Error con la carga de datos',
+            text:'Usted no ha ingresado el nombre y/o Dni del trabajador'
+        })
     }else{
-        console.log("hay valor")
         if(numero_dni.value.toString().length!=8){
             Swal.fire({
                 icon:'error',
@@ -22,7 +25,7 @@ boton_dni.addEventListener("click", (e)=>{
                 text:'El numero de DNI debe tener 8 numeros'
             })
         }else{
-            Dni_ls.push(new Dni_cargado(numero_dni.value , nombre_dni.value))
+            Dni_ls.push(new Dni_cargado(numero_dni.value.toLowerCase() , nombre_dni.value))
             localStorage.setItem("DNI",JSON.stringify(Dni_ls))
 
             Swal.fire({

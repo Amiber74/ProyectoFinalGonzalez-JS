@@ -14,7 +14,7 @@
     height: 25px;
     border: 2px solid black;
     border-radius: 10px;
-    background-color: rgb(71, 27, 88);
+    background-color: rgb(85, 85, 85);
     color:white;
     justify-self: center;
     align-self: center;
@@ -61,7 +61,7 @@
             }
             @extend .centrar;
         }
-        background-color: rgba(113, 50, 150, 0.705);
+        background-color: silver;
         padding-block: 30px;
         border-block: 3px solid black;
     }
@@ -116,7 +116,7 @@
                 @extend .boton;
             }
         }
-        background-color: rgba(113, 50, 150, 0.705);
+        background-color: silver;
         padding-block: 30px;
         border-block: 3px solid black;
         
