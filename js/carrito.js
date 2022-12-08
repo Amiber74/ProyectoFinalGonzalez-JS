@@ -4,16 +4,24 @@ const boton_comprar = document.querySelector("#boton_comprar")
 const contenedor_carrito_vacio = document.querySelector("#carrito-vacio")
 
 const Productos_carrito=JSON.parse(localStorage.getItem("Carrito"))
-Array.from(Productos_carrito)
+
+let carrito_Ls = []
+if(carrito_Ls !==null){
+    carrito_Ls=Productos_carrito || localStorage.setItem("Carrito",JSON.stringify( carrito_Ls))
+}
 
 
-if (Productos_carrito.toString() === ''){
+
+Array.from(carrito_Ls)
+
+
+if (carrito_Ls.toString() === ''){
     contenedor_carrito.classList.toggle("carrito-vacio-oculto")
     contenedor_carrito_vacio.classList.toggle("carrito-vacio-activo")
     total_prod.classList.add("Precio_Total-oculto")
 }
 let total=0
-for (const p of Productos_carrito){
+for (const p of carrito_Ls){
 
     total = total + p.precio
     localStorage.setItem("Total-carrito", JSON.stringify(total))
@@ -32,12 +40,12 @@ for (const p of Productos_carrito){
     prod_carrito.append(eliminar_prod)
     eliminar_prod.addEventListener("click", ()=>{
 
-        const prod_eliminar = Productos_carrito.find((dato)=>dato.id === p.id)
+        const prod_eliminar = carrito_Ls.find((dato)=>dato.id === p.id)
 
-        let pos =Productos_carrito.indexOf(prod_eliminar)
-        Productos_carrito.splice(pos,1)
+        let pos =carrito_Ls.indexOf(prod_eliminar)
+        carrito_Ls.splice(pos,1)
 
-        localStorage.setItem("Carrito",JSON.stringify(Productos_carrito))
+        localStorage.setItem("Carrito",JSON.stringify(carrito_Ls))
         
         location.reload()
     })
@@ -51,10 +59,17 @@ total_prod.innerHTML=`<p >Total a pagar $${precio_total} </p>`
 main_carrito.append(total_prod)
 
 const botonComprar = document.createElement("div")
+
 botonComprar.innerHTML= `<button><strong>Compra Final</strong></button>`
+
+
+
 botonComprar.addEventListener("click", ()=>{
     localStorage.setItem("Carrito",JSON.stringify([]))
-    location.reload()
+    cont_info.classList.add("form_recibo-activo")
+
+
+
+
 })
 total_prod.append(botonComprar)
-

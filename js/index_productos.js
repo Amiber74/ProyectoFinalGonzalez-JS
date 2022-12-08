@@ -4,7 +4,7 @@ const Carrito_LS = JSON.parse(localStorage.getItem('Carrito'))
 
 let lista_carrito=[]
 if(lista_carrito!==null){
-    lista_carrito=Carrito_LS || localStorage.setItem("Productos",JSON.stringify(lista_carrito))
+    lista_carrito=Carrito_LS || localStorage.setItem("Carrito",JSON.stringify(lista_carrito))
 }
 
 Array_prod.forEach((p)=>{

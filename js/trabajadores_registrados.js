@@ -10,6 +10,7 @@
 //     {dni:14826579, nombre: "facundo"},
 //     {dni:74125963, nombre:"cris"},
 // ]
+// localStorage.setItem("DNI",JSON.stringify(dni_registro))
 
 const dni_LS = JSON.parse(localStorage.getItem("DNI"))
 let dni=[]

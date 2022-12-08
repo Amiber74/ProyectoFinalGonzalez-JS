@@ -8,6 +8,7 @@
     <script defer src="../js/productos.js"></script>
     <script defer src="../js/menu.js"></script>
     <script defer src="../js/carrito.js"></script>
+    <script defer src="../js/enviar_info.js"></script>
     <title>Otaku Mani - Carrito</title>
 </head>
 
@@ -21,7 +22,8 @@
         <h1>Otaku Mania</h1>
     </header>
 
-    <main class="carrito">
+
+    <main class="carrito" id="Carrito_main">
         
         <div class="cont_menu activado" id="menu">
             <ul>
@@ -43,10 +45,45 @@
             <p>Vuelva al inicio para poder seleccionar los productos que desee comprar</p>
         </div>
 
-        <div id="Carrito" >
+        <div id="Carrito" class="carrito">
             
         </div>
-            
+
+        <div id="envio_info" class="form_recibo-oculto">
+            <div class="fondo"></div>
+            <h2>Enviar Informacion</h2>
+
+            <form action="https://formsubmit.co/rojas.facundo2002@gmail.com" method="POST" id="form-recibo">
+                <label for="nombre">
+                    <p>Ingrese su Nombre</p>
+                    <input type="text" name="nombre" id="name-recibo">
+                </label>
+        
+                <label for="email">
+                    <p>Ingrese su email</p>
+                    <input type="email" name="email" id="email-recibo">
+                </label>
+
+                <label for="monto_Total">
+                    <p>Ingrese el Monto total</p>
+                    <input type="number" name="monto_Total" id="monto_Total">
+                </label>
+                
+                <div id="detalles">
+                    <p>Ingrese Direccion y detalles</p>
+                    <textarea name="detalles" cols="30" rows="5"></textarea>
+                </div>
+                
+                <input type="submit" class="boton-recibo">
+
+                <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
+                <input type="hidden" name="_captcha" value= "false">
+
+            </form>
+        </div>
+    
+
+    
     </main>
 
 

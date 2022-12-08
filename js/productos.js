@@ -1,3 +1,6 @@
+
+
+
 // const prod = [
 //     {nombre:"Cosplay de Venti", precio:20000, id:1, img:"https://m.media-amazon.com/images/I/61Tk9GwSnzL._AC_UL1000_.jpg", desc:"Disfraz de tu personaje de genshin impact, tamaño largo"},
 //     {nombre:"Lampara de Venti", precio:9500, id:2, img:"https://m.media-amazon.com/images/I/61i9hGRLNcL._AC_SL1000_.jpg", desc:"Lampara de Venti, personaje de Genshin Impact"},
@@ -10,11 +13,16 @@
 //     {nombre:"Juego de peluches slimes", precio:11000, id:9, img:"https://m.media-amazon.com/images/I/71+7mRe4JeL._AC_SL1500_.jpg", desc:"peluches de slimes suaves al tacto de todos los elementos"},
 //     {nombre:"auriculares genshin impact", precio:43000, id:10, img:"https://m.media-amazon.com/images/I/51Cybn7sAAL._AC_.jpg", desc:"Auriculares tematica de klee, personaje de Genshin Impact"}
 // ]
-// localStorage.setItem("Productos",JSON.stringify(prod))
+// localStorage.setItem("Productos", JSON.stringify(prod))
 
 
 const Producto_LS = localStorage.getItem("Productos")
 let prod_list = []
 if (prod_list !== null){
-    prod_list = Producto_LS || localStorage.setItem('Productos', JSON.stringify())
+    prod_list = Producto_LS || localStorage.setItem('Productos', JSON.stringify(prod_list))
 }
+ 
+
+
+
+

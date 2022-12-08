@@ -36,7 +36,7 @@ boton_registro.addEventListener("click", (e)=>{
             title:'Cargando usuario',
             text:'porfavor espere',
             timer:3000,
-            timerProgressBar:true,
+            timerProgressBar:true, 
             showConfirmButton:false
         })
 

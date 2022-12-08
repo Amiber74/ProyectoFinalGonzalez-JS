@@ -377,9 +377,17 @@ body footer {
   grid-area: boton;
 }
 
+.fondo-oculto {
+  display: none;
+}
+
+.fondo {
+  background-color: gray;
+}
+
 .carrito {
   display: grid;
-  grid-template-rows: 200px 2fr 200px;
+  grid-template-rows: 200px 1fr 200px;
   grid-template-areas: "." "center" "total";
 }
 .carrito .carrito-vacio-oculto {
@@ -413,6 +421,7 @@ body footer {
 .carrito #Carrito .producto {
   display: grid;
   margin-block: 10px;
+  align-self: center;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 70px 70px 70px;
   grid-template-areas: "img nombre" "img precio" "img boton";
@@ -471,6 +480,97 @@ body footer {
 }
 .carrito .Precio_Total-oculto {
   display: none;
+}
+.carrito .form_recibo-oculto {
+  display: none;
+  grid-area: center;
+}
+.carrito .form_recibo-activo {
+  display: grid;
+  width: 100%;
+  position: fixed;
+  grid-area: center;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "titulo" "form";
+  background-color: rgb(228, 228, 228);
+  border-block: 2px solid black;
+  height: 60vh;
+}
+.carrito .form_recibo-activo .fondo {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  width: 100vw;
+  height: 200vh;
+  top: -200px;
+}
+.carrito .form_recibo-activo h2 {
+  z-index: 1;
+  grid-area: titulo;
+  text-align: center;
+  font-size: 2.5rem;
+  text-align: center;
+  align-self: center;
+}
+.carrito .form_recibo-activo form {
+  grid-area: form;
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 50px 50px 150px 50px;
+  grid-template-areas: "nombre" "email" "monto" "envio" "boton";
+}
+.carrito .form_recibo-activo form p {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+.carrito .form_recibo-activo form #name-recibo {
+  grid-area: nombre;
+  justify-self: center;
+  padding-inline: 5px;
+  margin-left: 17%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.carrito .form_recibo-activo form #email-recibo {
+  grid-area: email;
+  padding-inline: 5px;
+  margin-left: 17%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.carrito .form_recibo-activo form #monto_Total {
+  grid-area: monto;
+  padding-inline: 5px;
+  margin-left: 17%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.carrito .form_recibo-activo form #detalles {
+  grid-area: envio;
+  margin-left: 7%;
+}
+.carrito .form_recibo-activo form #detalles textarea {
+  margin-right: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-inline: 5px;
+}
+.carrito .form_recibo-activo form .boton-recibo {
+  grid-area: boton;
+  justify-self: center;
+  align-self: center;
+  width: 100px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgb(172, 172, 172);
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
