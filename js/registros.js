@@ -29,8 +29,18 @@ boton_registro.addEventListener("click", (e)=>{
             this.contraseña=contraseña;
 
         }
-        lista_registrados.push(new Trabajador (nombre.value.toLowerCase(),email.value,dni.value,contraseña.value))
+        lista_registrados.push(new Trabajador (nombre.value.toLowerCase(),email.value,parseInt(Dni.value),contraseña.value))
         localStorage.setItem("Registrados", JSON.stringify(lista_registrados))
+
+        
+        const dni_eliminar = dni_aceptados.find((dato)=>dato.dni === parseInt(Dni.value))
+        let pos = dni_aceptados.indexOf(dni_eliminar)
+        console.log(pos)
+        dni_aceptados.splice(pos,1)
+        
+        localStorage.setItem("DNI",JSON.stringify(dni_aceptados))
+
+
         Swal.fire({
             icon:'warning',
             title:'Cargando usuario',
@@ -44,9 +54,14 @@ boton_registro.addEventListener("click", (e)=>{
             Swal.fire({
                 icon:'success',
                 title:'Usuario registrado correctamente',
-                
+                timer:1500,
+                showConfirmButton:false
             })
         },3000)
+        setTimeout(()=>{
+            location.reload()
+
+        },4000)
 
 
     } else {

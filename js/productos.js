@@ -21,7 +21,7 @@ let prod_list = []
 if (prod_list !== null){
     prod_list = Producto_LS || localStorage.setItem('Productos', JSON.stringify(prod_list))
 }
- 
+
 
 
 

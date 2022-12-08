@@ -11,7 +11,7 @@ Array_prod.forEach((p)=>{
     const div = document.createElement("div")
     div.classList.add("tarjeta_prod")
     div.innerHTML =`
-    <h1>${p.nombre}</h1>
+    <h2>${p.nombre}</h2>
     <img src="${p.img}"></img>
     <p class="descripcion">${p.desc}</p>
     <p class="precio">$${p.precio}</p>

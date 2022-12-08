@@ -25,7 +25,7 @@ boton_dni.addEventListener("click", (e)=>{
                 text:'El numero de DNI debe tener 8 numeros'
             })
         }else{
-            Dni_ls.push(new Dni_cargado(numero_dni.value.toLowerCase() , nombre_dni.value))
+            Dni_ls.push(new Dni_cargado(parseInt(numero_dni.value) , nombre_dni.value.toLowerCase()))
             localStorage.setItem("DNI",JSON.stringify(Dni_ls))
 
             Swal.fire({

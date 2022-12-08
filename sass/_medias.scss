@@ -1,0 +1,89 @@
+// Media del Layout
+
+@media (min-width:1024px){
+    header{
+        .menu_hamburguesa{
+            left: 10% !important;
+            top: 15% !important;
+            width: 80px !important;
+            height: 160px !important;
+            span{
+                margin-top: 18px !important;
+            }
+        }
+        .linea1_menu-activa{
+            transform: rotate(45deg) translate(-7px, -6px)!important;
+        }
+        .linea3_menu-activa{
+            transform: rotate(-45deg) translate(-0px, 2px)!important;
+        }
+        h1{
+            font-size: 4rem !important;
+        }
+    }
+
+    main{
+        .cont_menu{
+            position:absolute;
+            left: 0px !important;
+            width: 300px !important;
+            ul{
+                li{
+                    padding-left: 0 !important;
+                }
+            }
+        }
+        .activado{
+            transform: translate(-500px) !important;
+            transition: 1s;
+        }
+    }
+}
+
+// Inicio
+
+@media (min-width:1024px){
+    #index{
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 20px;
+        padding-bottom: 20px;
+        .tarjeta_prod{
+            margin-top: 20px;
+            margin-inline: 30px;
+            text-align: center;
+            grid-template-rows: 50px 200px 60px 20px 30px;
+            img{
+                width: 80%;
+                height: 100%;
+                margin-bottom: 15px;
+            }
+            .descripcion{
+            padding-top: 20px;
+            }
+            button{
+                margin-left: 0px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Carrito
+@media (min-width:1024px){
+    .producto{
+        margin-inline: 200px;
+        border-inline: 2px solid black;
+        .nombre_carrito{
+            font-size: 2.8rem !important;
+        }
+        .precio_carrito{
+            font-size: 2.5rem !important;
+        }
+        #eliminar_prod{
+            font-size: 1.5rem !important;
+            width: 110px !important;
+            height: 40px !important;
+            margin-left: 35% !important;
+        }
+    }
+}

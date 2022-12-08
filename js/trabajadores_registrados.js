@@ -1,7 +1,7 @@
 // const Registrados =[
 //     {nombre:"facundo", email:"rojas.facundo2002@gmail.com", contraseña:"asd", dni:"44268002"}
 // ]
-
+// localStorage.setItem("Registrados", JSON.stringify(Registrados))
 
 // const dni_registro = [
 //     {dni:12378945, nombre: "kevin"},
